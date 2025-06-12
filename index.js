@@ -91,12 +91,8 @@ app.delete("/tasks/:id", async (req, res) => {
 });
 
 
-let port;
-if (process.env.PORT) {
-    port = process.env.PORT
-} else {
-    port = 4000;
-}
+const port = process.env.PORT || 4000;
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
